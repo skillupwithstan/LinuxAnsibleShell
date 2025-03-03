@@ -1,0 +1,45 @@
+Math:
+ 
+SUM=$(($A+$B))
+ 
+SUB=$(($A-$B))
+ 
+MUL=$(($A*$B))
+ 
+DIV=$(($A/$B))
+ 
+VARIABLE=$(cat /etc/passwd)  OR  VARIABLE=`cat /etc/passwd`
+
+######################################################################
+ 
+REQ1: Pass dynamic values
+ 
+Input:
+ 
+sh math.sh add 10 20 30
+
+sh math.sh mul 10 20 30
+ 
+ 
+Output:
+
+The sum of all values: 60
+
+The mulof all values: 6000
+
+######################################################################
+
+REQ2: user managment --> useradd <username>, userdel <username>
+ 
+Input:
+ 
+sh user_mngt.sh add Ben Kumar Raj
+ 
+sh user_mngt.sh remove Ben Kumar Raj
+ 
+ 
+Output:
+ 
+User Added: Ben Kumar Raj
+
+User Removed: Ben Kumar Raj
