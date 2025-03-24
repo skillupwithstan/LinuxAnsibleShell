@@ -1,0 +1,48 @@
+#USING SSH WITH KEY BASED AUTHENTICATION
+
+#!/bin/bash
+
+# Prompt the user for input
+read -p "Enter the value to pass to the remote script: " user_value
+
+# Prompt for the remote machine details
+read -p "Enter the remote username: " remote_user
+read -p "Enter the remote host (IP or hostname): " remote_host
+
+# Use SSH to run the script on the remote machine
+ssh "${remote_user}@${remote_host}" bash -s "$user_value" <<'EOF'
+# Access the passed value using the positional parameter $1
+echo "The value passed from the local machine is: $1"
+
+# Example: Use the value in a command
+echo "Running a command with the value..."
+ls -l "$1"
+EOF
+
+#USING SSH WITH PASSWORD BASED AUTHENTICATION
+
+#!/bin/bash
+
+# Prompt the user for input
+read -p "Enter the value to pass to the remote script: " user_value
+
+# Prompt for the remote machine details
+read -p "Enter the remote username: " remote_user
+read -p "Enter the remote host (IP or hostname): " remote_host
+
+# Use SSH to run the script on the remote machine
+sshpass -p "admin123" ssh "${remote_user}@${remote_host}" bash -s "$user_value" <<'EOF'
+# Access the passed value using the positional parameter $1
+echo "The value passed from the local machine is: $1"
+
+# Example: Use the value in a command
+echo "Running a command with the value..."
+ls -l "$1"
+EOF
+
+# Encrypting the password
+echo "your_password" | openssl enc -aes-256-cbc -salt -pbkdf2 -out encrypted_password.txt
+
+# Decrypt the password 
+openssl enc -aes-256-cbc -d -salt -pbkdf2 -in encrypted_password.txt
+
