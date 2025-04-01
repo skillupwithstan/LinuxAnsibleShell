@@ -1,0 +1,401 @@
+Day 1 - Introduction
+--------------------
+
+ORCHESTRATION TOOL --> SCORCH, VRO, HPOO, SNOW ORCH, NETAPP Workflow
+
+Automation --> Semi-Automated Solution, End-to-End Automated Solution
+
+Scripting --> PowerShell (Windows), Bash Shell (Linux), Perl, Python, Ruby
+
+
+
+Day - 2
+--------
+
+OS Installation
+
+pwd --> present working directory
+
+cd --> change directory
+
+ls --> to display files and folders
+
+  d --> directory
+  l --> link
+  - --> file
+
+cat --> to display the file content
+
+whoami --> display current user
+
+Day - 3
+-------
+
+File system management
+
+Directory/File name:
+
+Best Practices : Meaningful name, Not starts with a number, No special characters, use lower case 
+
+to open/edit a file using vi/vim editor.
+
+vi <filename with extension>
+
+OR 
+
+vim <filename with extension>
+
+ESC + i --> Insert mode
+
+ESC + :w --> write/save the content
+
+ESC + :q --> exit the file
+
+ESC + :wq --> save & exit
+
+ESC + :wq! --> forcefully save & exit
+
+
+
+TEXT --> .txt
+LOG --> .log
+CSV --> .csv
+Configuration File --> .conf
+
+> --> write a file and it will override the content
+>> --> append a file
+< --> read a file
+
+Day 04
+------
+
+Path Traversal
+
+less --> 
+more --> 
+
+Day 05
+------
+
+cut -d 
+
+d --> delimiter
+
+Day 06
+------
+
+system resources --> CPU, Memory, Disk
+cpu --> top, ps
+memory --> free
+disk --> df
+
+Variables --> Two types
+1. System/Built-in variables
+2. User Defined variables
+
+printenv --> to fetch environmental variables
+
+Compiler --> Run entire code
+Interpreter --> line by line execution
+
+# --> Comment statement
+
+To run the command in the shell script
+
+$(cat sample.txt) OR `cat sample.txt`
+
+Day 07
+------
+0 --> TRUE
+1 --> FALSE
+
+$? --> 0/1
+
+Data Types: 
+
+numbers 0,1,34324,-2324,-354364 --> integer
+decimal 0.4,0435.436456 --> float
+letters a, b, c --> character
+words ab,raja, name, a1,an3 --> string
+True, False --> Boolean
+
+Conditional Statement
+
+if - else
+
+if($a -eq 10)
+{
+#block of statment
+
+}
+else
+{
+#block of statement
+}
+
+Math:
+
+SUM=$(($A+$B))
+
+SUB=$(($A-$B))
+
+MUL=$(($A*$B))
+
+DIV=$(($A/$B))
+
+VARIABLE=$(cat /etc/passwd)  OR  VARIABLE=`cat /etc/passwd`
+
+
+REQ1: Pass dynamic values 
+
+Input:
+
+sh math.sh add 10 20 30
+sh math.sh mul 10 20 30
+
+
+Output:
+The sum of all values: 60
+The mulof all values: 6000
+
+REQ2: user managment --> useradd <username>, userdel <username>
+
+Input:
+
+sh user_mngt.sh add Ben Kumar Raj
+
+sh user_mngt.sh remove Ben Kumar Raj
+
+
+Output:
+
+User Added: Ben Kumar Raj
+User Removed: Ben Kumar Raj
+
+Day - 08
+--------
+
+input processing - input.txt, prompting, dynamic values (run-time values), inventory/cmdb/ticket (external tools)
+
+API --> Application Programming Interface
+
+A | P
+
+SNOW | Shell scripting
+
+https://service-now.<company>.com
+
+https://service-now.<company>.com/api/v1
+
+curl
+
+Day - 09
+--------
+
+Adding user --> useradd $username
+Deleting user --> userdel $username
+Modify user --> usermod -s $shell $username
+Change password --> passwd $username
+Create Group --> groupadd $groupname
+Delete Group --> groupdel $groupname
+Add User to Group --> usermod -aG $groupname $username
+
+Day - 10
+--------
+
+Service Management
+-------------------
+
+1. Check service status --> systemctl status <servicename> (Ex: systemctl status httpd | grep Active | cut -d ":" -f1 | cut -d " " -f1,2,3)
+2. Start service --> systemctl start <servicename>
+3. Stop service --> systemctl stop <servicename>
+4. Restart service --> systemctl restart <servicename>
+5. Enable service --> systemctl enable <servicename>
+6. Disable service -->  systemctl disable <servicename>
+
+# To display all service details
+systemctl list-units 
+
+
+software : apache (httpd)
+service: httpd (enable, start)
+
+Resource Management
+-------------------
+
+CPU, Memory, Disk, Network
+
+ping loss --> Network/system performance
+
+
+Teaming --> 
+
+NIC 1, NIC 2, NIC 3, NIC 4
+
+
+
+VCMON
+vROPS --> VMware product 
+
+1. Get CPU utilization  --> top -b -n1 | grep -i "%CPU(s)"
+2. Get Memory Utilization --> free -h
+3. Disk utilization --> df -h
+4. Get Uptime --> uptime 
+5. Terminate a process --> kill <pid/process name>
+6. Get the current running process --> ps
+7. Get IP Address --> hostname -I
+8. Port Details --> netstat -tual
+
+
+Input:
+server1,sever2, --- server10
+
+Output: 
+server1 - 10 GB
+server - 20 GB
+
+Day-11
+------
+
+NetApp0001
+NetApp00002
+
+
+10.2.4.5
+123.2.3.45
+
+This is my first line.
+
+
+/d --> digit [0-9]
+/s --> space
+/w --> word
+
+
+grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"
+
+grep -oE "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"
+
+Remoting
+--------
+
+ssh --> secure shell
+
+Day-12
+------
+
+Remoting --> with password using sshpass and without password using key exchange
+
+to pass password during the execution using sshpass
+
+Exercise:
+
+Get input from the user --> software name, action
+
+httpd
+install/uninstall/modify
+
+1.Software Install/Uninstallation/Modify
+2.Validate the software
+3.Enable,Start the service
+4.Validate the service
+5.ServerName, Software Name, Service Status
+
+Day-13
+-------
+
+API
+
+Application | Programming
+ServiceNow  | Shell script
+
+Modules
+--> Incident Management
+      --> Create
+      --> View 
+      --> Update
+      --> Close
+--> Change Management
+--> Service Management
+--> Request Management (RITM)
+--> Problem Management
+
+
+INC Number
+Assigned To
+Assigned Group
+Status
+Configuration Item (CI)
+Short Description
+Date/Time
+Work Notes
+
+
+CI: server0001.apac.com
+Short Description: Mcafee service is down
+
+PROD INSTANCE:
+URL: https://<company name>.service-now.com/incident/new
+
+API URL:
+https://<company name>.service-now.com/api
+https://<company name>.service-now.com/api/v1
+https://<company name>.service-now.com/api/v2
+
+API Crendentials
+----------------
+
+What's needed?
+
+API Documentation
+Creds
+
+API Developer
+
+Restful API
+
+
+SOAP - XML
+REST - JSON
+
+Day-14
+-------
+
+mail, mailx, sendmail
+
+Error/Exception handling
+
+Validation --> Input
+
+10/0
+
+SDLC --> Software developement lifecycle 
+Requirement gathering, Analysis, Design, Code Development, Testing, Maintenance
+
+1. set -x --> debugging
+2. $? --> previous command result true/false
+3. echo --> echo "Running Task: User Creation" >> output_$(date -f "%d-%M-%yy).log
+4. if-elif --> input validation
+5. trap command
+6. command1 || command2
+
+Introduction to Ansible 
+-----------------------
+
+DevOps --> CI/CD Pipeline
+
+DevOps Cycle --> Plan, Code, Deployment, Integration, Testing, Build, Monitoring
+
+Configuration Management tool --> Ansible, Puppet, Chef, Salt
+
+Day 0 --> Server Build/Deployment
+Day 1 --> Post Configurations --> User Addition, Backup agent, monitoring agent, security agent, CMDB entry, Application Installation, etc.,
+Day 2 --> Ad-hoc requests
+
+Terraform --> Deployment tool
+
+Ansible is a Redhat product
+
+1. Ansible Core --> Open source
+2. Ansible Tower/Ansible Controller --> Licensed 
+3. AWX --> Open source
