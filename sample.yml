@@ -1,5 +1,5 @@
 ---
- - hosts: 10.20.20.50
+ - hosts: all
    tasks:
     - debug:
         msg: "Calling from Ansible Tower"
