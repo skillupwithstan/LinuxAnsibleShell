@@ -1,5 +1,0 @@
----
- - hosts: all
-   tasks:
-    - debug:
-        msg: "The entered user name is {{ username }}"
