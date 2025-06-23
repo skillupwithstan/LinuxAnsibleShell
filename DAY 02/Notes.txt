@@ -1,1 +1,41 @@
+Day - 2
+-------
 
+configuration file names --> .cnf, .conf, .ini
+
+
+variables --> system/built-in variable, user defined variables
+
+Splunk --> 
+
+sssd --> 
+
+
+server001 --> Windows --> Domain: apac.com
+
+server001.apac.com
+
+APAC/nepolean
+
+
+server002 --> Linux --> System Security Services Daemon
+
+Samba --> 
+
+Cyberark --> password vault
+
+Man/Help System:
+---------------
+
+# To list the files & directories
+
+man ls
+
+ls -la ==> ll
+
+
+Pipeline
+
+
+cmd1  | cmd2
+output | input
