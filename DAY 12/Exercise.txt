@@ -1,5 +1,0 @@
-Get Software name, action to be performed from the user
-Example: httpd, install
-install the software httpd and enable,start the associated services
-validate the installation and validate the service status
-this needs to be performed for multiple machines using remoting.
