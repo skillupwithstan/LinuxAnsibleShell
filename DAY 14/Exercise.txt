@@ -1,4 +1,0 @@
-Exercise 1: Get File system name which are reached more than 15% threshold.
-Exercise 2: Get CPU & Memory Utilization and compare with the threshold limit 80%
-
-This can be taken from multiple system/machines.
