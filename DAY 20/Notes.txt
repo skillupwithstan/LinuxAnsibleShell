@@ -1,0 +1,27 @@
+Ansible Tower/Ansible Controller:
+
+1-100 
+
+1-20 --> Ansible Dev env
+21-100 --> Ansible Prod
+
+
+1-40 --> Ansible Tower1
+41-80 --> ansible Tower2
+80-100 --> Ansible Tower3
+
+RBAC -> Role based access control
+
+
+Organization --> client1, client2
+Teams --> Windows, Linux, Storage
+Users --> Thiru, Ramesh
+
+template --> 
+
+Workflow mngt
+Log mngt
+Inventory
+Project
+
+Recordings and Interview questions are updated. Please check the description.
